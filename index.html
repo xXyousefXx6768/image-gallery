@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>
+        image gallary
+    </h1>
+    <div class="gallery">
+        <img src="solar-panels-meadow 2 (2).png" alt="Image 1" class="gallery-item">
+        <img src="solar-panels-meadow 2 (1).png" alt="Image 2" class="gallery-item">
+        <img src="solar-panels-meadow 2.png" alt="Image 3" class="gallery-item">
+        
+    </div>
+    
+    <div id="fullscreen-container" class="fullscreen-container">
+        <img id="fullscreen-image" class="fullscreen-image">
+    </div>
+
+    <script>
+       
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const fullscreenContainer = document.getElementById('fullscreen-container');
+            const fullscreenImage = document.getElementById('fullscreen-image');
+               
+            fullscreenContainer.style.display = 'none';
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    fullscreenImage.src = item.src;
+                    fullscreenContainer.style.display = 'flex';
+                });
+            });
+
+            fullscreenContainer.addEventListener('click', () => {
+                fullscreenContainer.style.display = 'none';
+            });
+        
+    </script>
+</body>
+</html>
